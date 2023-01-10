@@ -96,6 +96,7 @@ class _MainPage extends State<MainPage> {
             ListTile(title: const Text('General')),
             SwitchListTile(
               title: const Text('Enable Bluetooth'),
+              activeTrackColor: Colors.deepOrange.shade300,
               value: _bluetoothState.isEnabled,
               onChanged: (bool value) {
                 // Do the request and update with the true value then
@@ -117,9 +118,13 @@ class _MainPage extends State<MainPage> {
               subtitle: Text(_bluetoothState.toString()),
               trailing: ElevatedButton(
                 child: const Text('Settings'),
+
                 onPressed: () {
                   FlutterBluetoothSerial.instance.openSettings();
                 },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.deepOrange.shade300, // Background color
+                ),
               ),
             ),
             ListTile(
@@ -161,6 +166,9 @@ class _MainPage extends State<MainPage> {
                     }
                   }
                 },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.deepOrange.shade300, // Background color
+                ),
               ),
             ),
             ListTile(
@@ -180,6 +188,9 @@ class _MainPage extends State<MainPage> {
                   );
                 }
                     : null,
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.deepOrange.shade300, // Background color
+                ),
               ),
             ),
           ],
